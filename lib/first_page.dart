@@ -37,6 +37,7 @@ class _SearchBarState extends State<SearchBar> {
 }
 
 class MyHomePage extends StatelessWidget{
+  static const String homepageroute = 'homepageroute';
 const MyHomePage({super.key});
 
   @override
@@ -217,11 +218,7 @@ const MyHomePage({super.key});
       ),
         floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const SecondPage()), 
-          );
-        
+          Navigator.of(context).pushNamed(SecondPage.secondpageroute);
         },
         backgroundColor: const Color(0xff3ABBE2),
         child: const Icon(Icons.qr_code_scanner, color: Colors.white,),

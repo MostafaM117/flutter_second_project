@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hotel_booking_app/first_page.dart';
 
 class SecondPage extends StatelessWidget{
+  static const String secondpageroute = 'secondpageroute';
 const SecondPage({super.key});
 
   @override
@@ -28,10 +28,7 @@ const SecondPage({super.key});
           alignment: Alignment.center,
           color: Colors.white,
           onPressed: (){
-            Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const MyHomePage()),
-          );
+            Navigator.of(context).pop();
           },),
         ),
           ],
@@ -58,7 +55,7 @@ const SecondPage({super.key});
             ),
             child: Column(
               children: [
-                Container(
+                SizedBox(
                   height: 802.9,
                   child:Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -80,7 +77,7 @@ const SecondPage({super.key});
                               children: [
                                 ClipRRect(
                                   borderRadius: BorderRadius.circular(15),
-                                  child: Container(
+                                  child: SizedBox(
                                     height: 70,
                                     width: 70,
                                     child: Image.asset('assets/1st Hotel.jpg',
