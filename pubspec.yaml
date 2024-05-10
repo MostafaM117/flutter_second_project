@@ -64,10 +64,13 @@ flutter:
     - assets/myphoto.jpg
     - assets/Lincoln Park.jpeg
     - assets/Rest & Beef.jpeg
-    - assets/1st Hotel.jpg
-    - assets/2nd Hotel.jpg
+    - assets/Hotel1.jpg
+    - assets/Hotel2.jpg
+    - assets/Hotel3.jpg
+    - assets/Hotel4.jpg
     - assets/Street.jpg
-  #   - images/a_dot_ham.jpeg
+    - assets/park3.jpg
+    - assets/park4.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

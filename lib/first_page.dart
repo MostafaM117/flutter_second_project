@@ -46,7 +46,6 @@ const MyHomePage({super.key});
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
         toolbarHeight: 60,
-                            //backgroundColor: Colors.black,
         title:Row(
         children:[  
         Container(
@@ -101,7 +100,6 @@ const MyHomePage({super.key});
             padding: const EdgeInsets.only(left: 20, right: 20),
             height: 50,
             width: 400,
-                                      //color: Colors.yellow,
             child: const Center(
               child: SearchBar(),
             ),
@@ -109,7 +107,6 @@ const MyHomePage({super.key});
           Container(
             width: 400,
             height: 60,
-                                      //color: Colors.red,
             padding: const EdgeInsets.only(left: 20, top: 30),
             child: const Text('Favorite Places',
             style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),),
@@ -120,28 +117,63 @@ const MyHomePage({super.key});
           ),
           Row(
             children: [
-            const SizedBox(
-            height: 20,
-            width: 20,
-          ),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(15),
-            child: SizedBox(
-              height: 230,
-              width: 220,
-              child:
-              Image.asset('assets/Lincoln Park.jpeg', 
-              fit: BoxFit.cover,
-              )
+              const SizedBox(
+                height: 20,
+                width: 20,
               ),
-              ),
-            const SizedBox(
-            height: 20,
-            width: 20,
-          ),
-            const SizedBox(
-            height: 20,
-            width: 20,
+              SizedBox(
+            width: 350,
+            height: 210,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                Container(
+                  width: 180,
+                  height: 200,
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.0)),
+                  child: ClipRect(
+                    child: Image.asset("assets/Lincoln Park.jpeg",
+                    fit: BoxFit.cover,),
+                  ),
+                ),
+                const SizedBox(
+                  width: 15,
+                ),
+                Container(
+                  width: 180,
+                  height: 200,
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.0)),
+                  child: ClipRect(
+                    child: Image.asset("assets/Rest & Beef.jpeg",
+                    fit: BoxFit.cover,),
+                  ),
+                ),
+                const SizedBox(
+                  width: 15,
+                ),
+                Container(
+                  width: 180,
+                  height: 200,
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.0)),
+                  child: ClipRect(
+                    child: Image.asset("assets/park3.jpg",
+                    fit: BoxFit.cover,),
+                  ),
+                ),
+                const SizedBox(
+                  width: 15,
+                ),
+                Container(
+                  width: 180,
+                  height: 200,
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.0)),
+                  child: ClipRect(
+                    child: Image.asset("assets/park4.jpg",
+                    fit: BoxFit.cover,),
+                  ),
+                ),
+              ]
+            ),
           ),
             ],
           ),
@@ -152,66 +184,131 @@ const MyHomePage({super.key});
           Container(
             width: 400,
             height: 40,
-                                      // color: Colors.red,
             padding: const EdgeInsets.only(left: 20),
             child: const Text('Nearest Places',
             style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),),
           ),
-          Container(
-            width: 350,
-            height: 70,
-            decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            color: Colors.white,),
-            child: Row(
-              children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(15),
-                child: SizedBox(
-                height: 70,
-                width: 70,
-                child:
-                Image.asset('assets/1st Hotel.jpg',
-                fit: BoxFit.cover,
-                )
-                ),
-                ),
-                const SizedBox(
-                height: 20,
-                width: 20,
-                ),
-              const SizedBox(
-                width: 200,
-                height: 60,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Row(
-                children: [
-                Icon(Icons.hotel, color: Colors.grey,),
-                Text(' Royal Albert Hotel',
-                style: TextStyle(fontWeight: FontWeight.w900, fontSize: 18),),
-                        ]
-                      ),
-                      Text('231 East 95th Street, HK',
-                      style: TextStyle(color: Colors.grey),)
-                    ],
-                  )
+          SizedBox(
+            width: 370,
+            height: 140,
+            // color: Colors.black,
+            child: ListView(
+            scrollDirection: Axis.vertical,
+            cacheExtent: 100.0,
+            children: [
+              ListTile(
+              leading: ClipRRect(
+              borderRadius: BorderRadius.circular(15),
+              child:
+              Image.asset('assets/Hotel1.jpg',
+              fit: BoxFit.cover,
+              )
               ),
-              const SizedBox(
-                height: 20,
-                width: 20,
-                ),
-                Container(
-                  width: 32,
-                  height: 32,
-                  decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xffDFF3F9),),
-                  child: const Icon(Icons.arrow_forward, color: Color(0xff3ABBE2),),
+              title: const Row(
+                children: [
+                  Icon(Icons.hotel, color: Colors.grey,),
+                  Text("Royal Albert Hotel",
+                  style: TextStyle(fontWeight: FontWeight.w900, fontSize: 18),
+                  )
+                ],
+              ) ,
+              subtitle: const Text("231 East 95th Street. HK",
+              style: TextStyle(color: Colors.grey),),
+              trailing: Container(
+                decoration: BoxDecoration(
+                color: const Color(0xffDFF3F9),
+                borderRadius: BorderRadius.circular(10),),
+                padding: const EdgeInsets.all(4.2),
+                child: const Icon(Icons.arrow_forward,
+              ), 
+              ) 
+                          ),
+
+              ListTile(
+              leading: ClipRRect(
+              borderRadius: BorderRadius.circular(15),
+              child:
+              Image.asset('assets/Hotel2.jpg',
+              fit: BoxFit.cover,
+              )
+              ),
+              title: const Row(
+                children: [
+                  Icon(Icons.hotel, color: Colors.grey,),
+                  Text("The Island Resort",
+                  style: TextStyle(fontWeight: FontWeight.w900, fontSize: 18),
+                  )
+                ],
+              ) ,
+              subtitle: const Text("Miracle Strip, Fort Walton Beach, FL",
+              style: TextStyle(color: Colors.grey),),
+              trailing: Container(
+                decoration: BoxDecoration(
+                color: const Color(0xffDFF3F9),
+                borderRadius: BorderRadius.circular(10),),
+                padding: const EdgeInsets.all(4.2),
+                child: const Icon(Icons.arrow_forward,
+              ), 
+              ) 
+                          ),
+            
+            ListTile(
+            leading: ClipRRect(
+            borderRadius: BorderRadius.circular(15),
+            child:
+            Image.asset('assets/Hotel3.jpg',
+            fit: BoxFit.cover,
+            )
+            ),
+            title: const Row(
+              children: [
+                Icon(Icons.hotel, color: Colors.grey,),
+                Text("Chateau Resort",
+                style: TextStyle(fontWeight: FontWeight.w900, fontSize: 18),
                 )
               ],
+            ) ,
+            subtitle: const Text("Front Beach Rd, Panama City Beach",
+            style: TextStyle(color: Colors.grey),),
+            trailing: Container(
+              decoration: BoxDecoration(
+              color: const Color(0xffDFF3F9),
+              borderRadius: BorderRadius.circular(10),),
+              padding: const EdgeInsets.all(4.2),
+              child: const Icon(Icons.arrow_forward,
+            ), 
+            ) 
             ),
+
+            ListTile(
+            leading: ClipRRect(
+            borderRadius: BorderRadius.circular(15),
+            child:
+            Image.asset('assets/Hotel4.jpg',
+            fit: BoxFit.cover,
+            )
+            ),
+            title: const Row(
+              children: [
+                Icon(Icons.hotel, color: Colors.grey,),
+                Text("Riu Beach Resort",
+                style: TextStyle(fontWeight: FontWeight.w900, fontSize: 18),
+                )
+              ],
+            ) ,
+            subtitle: const Text("Deira Islands, Dubai",
+            style: TextStyle(color: Colors.grey),),
+            trailing: Container(
+              decoration: BoxDecoration(
+              color: const Color(0xffDFF3F9),
+              borderRadius: BorderRadius.circular(10),),
+              padding: const EdgeInsets.all(4.2),
+              child: const Icon(Icons.arrow_forward,
+            ), 
+            ) 
+            ),
+            ],
+          ),
           )
         ],
       ),
@@ -223,7 +320,6 @@ const MyHomePage({super.key});
         backgroundColor: const Color(0xff3ABBE2),
         child: const Icon(Icons.qr_code_scanner, color: Colors.white,),
         ),
-      
     );
   }
 }
