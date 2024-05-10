@@ -80,7 +80,7 @@ const SecondPage({super.key});
                                   child: SizedBox(
                                     height: 70,
                                     width: 70,
-                                    child: Image.asset('assets/1st Hotel.jpg',
+                                    child: Image.asset('assets/Hotel1.jpg',
                                     fit: BoxFit.cover,
                                     )
                                   ),
